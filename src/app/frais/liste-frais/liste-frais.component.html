@@ -1,1 +1,18 @@
-<p>liste-frais works!</p>
+<div class="container">
+  <table>
+    <thead>
+    <tr>
+      <th>ID Frais</th>
+      <th>Année/Mois</th>
+      <th>Etat</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let frais of getListeFrais() | async">
+      <td>{{ frais.id_frais }}</td>
+      <td>{{ frais.anneemois }}</td>
+      <td>{{ frais.lib_etat }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

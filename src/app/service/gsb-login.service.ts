@@ -29,4 +29,12 @@ export class GsbLoginService {
       error => console.log('Erreur appel API')
     )
   }
+
+  recupererBearer(): string {
+    return this.login.access_token;
+  }
+
+  visiteurId(): number {
+    return this.login.visiteur.id_visiteur;
+  }
 }
