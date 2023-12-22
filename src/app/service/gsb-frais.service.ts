@@ -31,4 +31,12 @@ export class GsbFraisService {
       error => console.log('Erreur appel API')
     );
   }
+
+  chargeFrais(id_frais: number){
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.gsb_api.recupererBearer()
+    });
+    return this.http.get<Frais>('http://wsgsb.mgail.etu.lmdsio.com/api/frais/getUnFrais/' +
+    id_frais, {headers: headers})
+  }
 }
