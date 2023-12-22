@@ -12,6 +12,7 @@ export class GsbLoginService {
 
   private login: Login = new Login;
   private _responses = new BehaviorSubject<Login[]>([]);
+  private isLogin = false;
   private dataStore: {login: Login[]}={login:[]};
   readonly appels_termines = this._responses.asObservable();
   constructor(private http: HttpClient, private router: Router) { }
@@ -23,10 +24,11 @@ export class GsbLoginService {
         data => {
           this.login = new Login(data);
           this.dataStore.login.push(data);
+          this.isLogin = true;
           this._responses.next(this.dataStore.login);
           this.router.navigate(['/frais/liste']);
         },
-      error => console.log('Erreur appel API')
+      error => console.log('Erreur appel API'),
     )
   }
 
@@ -36,5 +38,20 @@ export class GsbLoginService {
 
   visiteurId(): number {
     return this.login.visiteur.id_visiteur;
+  }
+
+  public getIsLogin(): boolean {
+    return this.isLogin;
+  }
+
+  deconnect(): boolean{
+    return this.isLogin = false;
+  }
+  logout(){
+    this.login = new Login();
+    this.dataStore.login = [];
+    this._responses.next(this.dataStore.login);
+    this.deconnect();
+    this.router.navigate(['/login'])
   }
 }
