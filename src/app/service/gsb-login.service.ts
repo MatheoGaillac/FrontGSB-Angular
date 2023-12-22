@@ -44,14 +44,11 @@ export class GsbLoginService {
     return this.isLogin;
   }
 
-  deconnect(): boolean{
-    return this.isLogin = false;
-  }
   logout(){
     this.login = new Login();
     this.dataStore.login = [];
     this._responses.next(this.dataStore.login);
-    this.deconnect();
+    this.isLogin = false;
     this.router.navigate(['/login'])
   }
 }
