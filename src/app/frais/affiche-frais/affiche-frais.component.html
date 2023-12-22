@@ -13,7 +13,7 @@
   <div class="form-group">
     <label for="id_etat">État:</label>
     <select class="form-control" id="id_etat" [formControl]="id_etat">
-      <option *ngFor="let etat of getListeEtat() | async" [value]="etat.id_etat"> {{ etat.lib_etat }} </option>
+      <option *ngFor="let etat of getListeEtats() | async" [value]="etat.id_etat"> {{ etat.lib_etat }} </option>
     </select>
   </div>
   <br>
