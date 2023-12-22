@@ -15,7 +15,8 @@ export class Frais {
       this.id_etat = json.id_etat;
       this.anneemois = json.anneemois;
       this.nbjustificatifs = json.nbjustificatifs;
-      this.datemodification = json.montantvalide;
+      this.datemodification = json.datemodification;
+      this.montantvalide = json.montantvalide;
       this.lib_etat = json.lib_etat;
     }
   }

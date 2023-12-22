@@ -7,21 +7,20 @@ import {inject} from "@angular/core";
 import {AfficheFraisComponent} from "./frais/affiche-frais/affiche-frais.component";
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent},
-  { path: 'frais/liste', component: ListeFraisComponent , canActivate: [authentificationGuard()]},
-  { path: 'frais/liste/ :id_frais', component: AfficheFraisComponent , canActivate: [authentificationGuard()]},
-  { path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'frais/liste', component: ListeFraisComponent, canActivate: [authentificationGuard()]},
+  {path: 'frais/liste/:id_frais', component: AfficheFraisComponent, canActivate: [authentificationGuard()]},
+  {path: 'home', component: HomeComponent},
 ];
 
 export function authentificationGuard(): CanActivateFn {
   return () => {
     const loginService: GsbLoginService = inject(GsbLoginService);
 
-    if (loginService.visiteurId() > 0){
+    if (loginService.visiteurId() > 0) {
       return true;
-    }
-    else {
-       console.log('Il faut vous connecter');
+    } else {
+      console.log('Il faut vous connecter');
     }
     return false;
   }

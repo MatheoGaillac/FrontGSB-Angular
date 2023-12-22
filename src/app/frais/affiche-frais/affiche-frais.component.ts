@@ -43,4 +43,14 @@ export class AfficheFraisComponent {
   getListeEtats() {
     return this.etat_api.appels_terminesEtat;
   }
+
+  onSubmitFicheFrais() {
+    this.frais_api.updateFrais(
+      this.id_frais.valueOf(),
+      this.anneemois.value,
+      this.nbjustificatifs.value,
+      this.montantvalide.value,
+      this.id_etat.value
+    );
+  }
 }

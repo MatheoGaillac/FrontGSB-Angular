@@ -1,6 +1,8 @@
-<div class="container"><h2>Détails du Frais</h2>
+<div class="container">
+  <h2>Détails du Frais</h2>
   <div class="form-group">
-    <label for="anneemois">Année et mois:</label> <input type="text" class="form-control" id="anneemois" [formControl]="anneemois">
+    <label for="anneemois">Année et mois:</label>
+    <input type="text" class="form-control" id="anneemois" [formControl]="anneemois">
   </div>
   <div class="form-group">
     <label for="nbjustificatifs">Nombre de justificatifs:</label>
@@ -15,6 +17,8 @@
     <select class="form-control" id="id_etat" [formControl]="id_etat">
       <option *ngFor="let etat of getListeEtats() | async" [value]="etat.id_etat"> {{ etat.lib_etat }} </option>
     </select>
-  </div>
+   </div>
   <br>
+  <button type="button" class="btn btn-outline-primary" (click)="onSubmitFicheFrais()">Envoyer</button>
+  <button type="button" class="btn btn-outline-danger">Annuler</button>
 </div>
