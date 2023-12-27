@@ -19,7 +19,7 @@ export class GsbLoginService {
 
   serviceEnvoieLogin(email: string, password: string){
     const requestObject = new Visiteur({"login": email, "password": password});
-    return this.http.post<Login>('http://wsgsb.mgail.etu.lmdsio.com/api/login', requestObject).
+    return this.http.post<Login>('http://127.0.0.1:8000/api/login', requestObject).
       subscribe(
         data => {
           this.login = new Login(data);
