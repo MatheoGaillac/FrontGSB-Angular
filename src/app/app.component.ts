@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {MenuComponent} from "./menu/menu.component";
@@ -11,6 +11,10 @@ import {LoginComponent} from "./login/login.component";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'ProjetGSBAngular';
+
+  ngOnInit(){
+    document.body.classList.add('app-body');
+  }
 }

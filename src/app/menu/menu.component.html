@@ -1,9 +1,30 @@
-<ul class="nav navbar-nav left">
-  <li><a routerLink="/home" data-toggle="collapse" data-target=".navbar-collapse.in">Accueil</a></li>
-  <li *ngIf="isLoggedIn()"><a routerLink="/frais/liste" data-toggle="collapse" data-target=".navbar-collapse.in">Liste Frais</a></li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-  <li *ngIf="isLoggedIn()" (click)="logout()"><a routerLink="/logout" data-toggle="collapse" data-target=".navbar-collapse.in">Se déconnecter</a></li>
-  <li *ngIf="!isLoggedIn()"><a routerLink="/login" data-toggle="collapse" data-target=".navbar-collapse.in">Se
-    connecter</a></li>
-</ul>
+<div id="mainNavigation">
+  <nav role="navigation">
+    <div class="py-3 text-center border-bottom">
+      <img src="../../assets/images/gsb.png" alt="" class="logo">
+    </div>
+  </nav>
+  <div class="navbar-expand-md">
+    <div class="navbar-dark text-center my-2">
+      <button class="navbar-toggler w-75" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
+      </button>
+    </div>
+    <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home" data-toggle="collapse" data-target=".navbar-collapse.in">Accueil</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" routerLink="/frais/liste" data-toggle="collapse" data-target=".navbar-collapse.in">Liste Frais</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()" (click)="logout()">
+          <a class="nav-link" routerLink="/logout" data-toggle="collapse" data-target=".navbar-collapse.in">Se déconnecter</a>
+        </li>
+        <li class="nav-item"*ngIf="!isLoggedIn()">
+          <a class="nav-link" routerLink="/login" data-toggle="collapse" data-target=".navbar-collapse.in">Se connecter</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
