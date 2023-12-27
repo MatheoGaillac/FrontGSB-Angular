@@ -6,23 +6,29 @@
   </nav>
   <div class="navbar-expand-md">
     <div class="navbar-dark text-center my-2">
-      <button class="navbar-toggler w-75" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler w-75 menu-button" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
       </button>
     </div>
     <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto ">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/home" data-toggle="collapse" data-target=".navbar-collapse.in">Accueil</a>
+          <a class="nav-link active" aria-current="page" routerLink="/home" data-toggle="collapse"
+            data-target=".navbar-collapse.in">Accueil</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn()">
-          <a class="nav-link" routerLink="/frais/liste" data-toggle="collapse" data-target=".navbar-collapse.in">Liste Frais</a>
+          <a class="nav-link" routerLink="/frais/liste" data-toggle="collapse" data-target=".navbar-collapse.in">Liste
+            Frais</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn()" (click)="logout()">
-          <a class="nav-link" routerLink="/logout" data-toggle="collapse" data-target=".navbar-collapse.in">Se déconnecter</a>
+          <a class="nav-link" routerLink="/logout" data-toggle="collapse" data-target=".navbar-collapse.in">Se
+            déconnecter</a>
         </li>
-        <li class="nav-item"*ngIf="!isLoggedIn()">
-          <a class="nav-link" routerLink="/login" data-toggle="collapse" data-target=".navbar-collapse.in">Se connecter</a>
+        <li class="nav-item" *ngIf="!isLoggedIn()">
+          <a class="nav-link" routerLink="/login" data-toggle="collapse" data-target=".navbar-collapse.in">Se
+            connecter</a>
         </li>
       </ul>
     </div>
