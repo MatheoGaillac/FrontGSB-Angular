@@ -1,9 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body.app-body{
-	background: linear-gradient(to bottom, #d8f5f5 90%, #6fc9c8 10%);
+	background: linear-gradient(to bottom, #00455a 0%, #0190bb 100%);
 }
 #routerOutletContainer {
 	padding-top: 200px; 
