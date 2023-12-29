@@ -1,15 +1,14 @@
-<div class="container-all">
-  <h1>Identifiez-vous</h1>
-  <div class="container">
-    <p class="form-group">
-      Nom d'utilisateur <input type="text" [formControl]="email"/>
-    </p>
-    <div class="form-group">
-      Mot de passe
-      <div class="password-container">
-        <input type="{{ showPassword ? 'text' : 'password' }}" [formControl]="password"/>
+<div class="container-all login-box">
+  <h2>Identifiez-vous</h2>
+    <div class="container">
+      <div class="form-group user-box">
+        <input type="text" [formControl]="email" required="" />
+        <label>Nom d'utilisateur</label>
       </div>
+      <div class="form-group user-box">
+        <input type="password" [formControl]="password" required="" />
+        <label>Mot de passe</label>
+      </div>
+      <button class="submit-button" (click)="onSubmit()">Envoyer</button>
     </div>
-    <button class="submit-button" (click)="onSubmit()">Envoyer</button>
-  </div>
 </div>
