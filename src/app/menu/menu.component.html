@@ -15,19 +15,16 @@
     <div class="text-center mt-3 pb-3 collapse navbar-collapse border-bottom" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/home" data-bs-toggle="collapse" data-bs-dismiss="collapse">Accueil</a>
+          <a class="nav-link active" aria-current="page" routerLink="/home" (click)="closeDropdown()">Accueil</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn()">
-          <a class="nav-link" routerLink="/frais/liste" data-bs-toggle="collapse" data-bs-dismiss="collapse">Liste
-            Frais</a>
+          <a class="nav-link" routerLink="/frais/liste" (click)="closeDropdown()">Liste Frais</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn()" (click)="logout()">
-          <a class="nav-link" routerLink="/logout" data-bs-toggle="collapse" data-bs-dismiss="collapse">Se
-            déconnecter</a>
+          <a class="nav-link" routerLink="/logout" (click)="closeDropdown()">Se déconnecter</a>
         </li>
         <li class="nav-item" *ngIf="!isLoggedIn()">
-          <a class="nav-link" routerLink="/login" data-bs-toggle="collapse" data-bs-dismiss="collapse">Se
-            connecter</a>
+          <a class="nav-link" routerLink="/login" (click)="closeDropdown()">Se connecter</a>
         </li>
       </ul>
     </div>

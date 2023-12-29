@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {CommonModule} from '@angular/common';
 import {GsbLoginService} from "../service/gsb-login.service";
@@ -14,7 +14,7 @@ import {GsbLoginService} from "../service/gsb-login.service";
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  constructor(private gsbLoginService: GsbLoginService) {
+  constructor(private gsbLoginService: GsbLoginService, private renderer: Renderer2) {
   }
 
   isLoggedIn(): boolean {
@@ -23,5 +23,10 @@ export class MenuComponent {
 
   logout(){
     this.gsbLoginService.logout();
+  }
+
+  closeDropdown() {
+    const navbar = document.getElementById('navbarNavDropdown');
+    this.renderer.removeClass(navbar, 'show');
   }
 }
