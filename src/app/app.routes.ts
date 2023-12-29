@@ -8,6 +8,7 @@ import {AfficheFraisComponent} from "./frais/affiche-frais/affiche-frais.compone
 
 export const routes: Routes = [
   {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LoginComponent},
   {path: 'frais/liste', component: ListeFraisComponent, canActivate: [authentificationGuard()]},
   {path: 'frais/liste/:id_frais', component: AfficheFraisComponent, canActivate: [authentificationGuard()]},
   {path: 'home', component: HomeComponent},
