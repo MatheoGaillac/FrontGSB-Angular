@@ -1,28 +1,24 @@
-/* Style pour le conteneur principal */
 .container-all {
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Style pour le titre */
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Style pour le conteneur du formulaire */
+
 .container {
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
 }
 
-/* Style pour les groupes de formulaire */
 .form-group {
   margin-bottom: 15px;
 }
 
-/* Style pour les champs de formulaire */
 input {
   width: 100%;
   padding: 8px;
@@ -30,12 +26,10 @@ input {
   box-sizing: border-box;
 }
 
-/* Style pour le conteneur du mot de passe */
 .password-container {
   position: relative;
 }
 
-/* Style pour le bouton d'envoi du formulaire */
 .submit-button {
   background-color: #4caf50;
   color: #fff;
@@ -46,8 +40,6 @@ input {
   font-size: 16px;
 }
 
-/* Style pour le bouton d'envoi du formulaire au survol */
 .submit-button:hover {
   background-color: #45a049;
 }
-
