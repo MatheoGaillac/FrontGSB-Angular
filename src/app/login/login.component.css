@@ -69,13 +69,27 @@
   font-size: 12px;
 }
 
-.has-error {
-  border-bottom: 1px solid red;
-}
-
 .error-message {
   color: red;
   font-size: 12px;
   margin-top: 1px;
   margin-bottom: 5px;
+}
+
+.custom-icon-button mat-icon {
+  color: rgba(255, 255, 255, 0.753);
+}
+
+.custom-icon-button {
+  border: none;
+  background: none;
+}
+
+.pass {
+  display: flex;
+  align-items: center;
+}
+
+.input-container {
+  flex: 1;
 }
