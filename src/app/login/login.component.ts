@@ -13,14 +13,19 @@ import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angula
 })
 
 export class LoginComponent {
-  email: FormControl = new FormControl('');
+  user_id: FormControl = new FormControl('');
   password: FormControl = new FormControl('');
 
   constructor(private loginService: GsbLoginService) {}
 
   onSubmit() {
+    if (this.user_id.invalid || this.password.invalid) {
+      // Le formulaire n'est pas valide, n'envoie pas les informations
+      return;
+    }
+  
     this.loginService.serviceEnvoieLogin(
-      this.email.value,
+      this.user_id.value,
       this.password.value
     );
   }

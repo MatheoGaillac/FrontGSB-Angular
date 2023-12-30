@@ -41,7 +41,6 @@
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
-  margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #fff;
   outline: none;
@@ -58,10 +57,24 @@
   transition: .5s;
 }
 
+.user-box{
+  margin-bottom: 30px;
+}
+
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 12px;
+}
+
+.has-error {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 1px;
 }
