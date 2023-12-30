@@ -11,6 +11,7 @@
       <label>Mot de passe</label>
       <div *ngIf="(formSubmitted || password.touched) && password.invalid" class="error-message">Veuillez remplir ce champ</div>
     </div>
+    <div *ngIf="getErrorMessage() !== ''" class="error-message">{{ getErrorMessage() }}</div>
     <button class="submit-button" (click)="onSubmit()">Envoyer</button>
   </div>
 </div>
