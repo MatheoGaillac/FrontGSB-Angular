@@ -1,29 +1,15 @@
-<!-- <div class="container-all login-box">
-  <h2>Identifiez-vous</h2>
-    <div class="container">
-      <div class="form-group user-box">
-        <input type="text" [formControl]="user_id" required="" />
-        <label>Nom d'utilisateur</label>
-      </div>
-      <div class="form-group user-box">
-        <input type="password" [formControl]="password" required=""/>
-        <label>Mot de passe</label>
-      </div>
-      <button class="submit-button" (click)="onSubmit()">Envoyer</button>
-    </div>
-</div> -->
 <div class="container-all login-box">
   <h2>Identifiez-vous</h2>
   <div class="container">
-    <div class="form-group user-box" [ngClass]="{'has-error': user_id.invalid && user_id.touched}">
+    <div class="form-group user-box" [ngClass]="{'has-error': (formSubmitted || user_id.touched) && user_id.invalid}">
       <input type="text" [formControl]="user_id" required />
       <label>Nom d'utilisateur</label>
-      <div *ngIf="user_id.invalid && user_id.touched" class="error-message">Veuillez remplir ce champ</div>
+      <div *ngIf="(formSubmitted || user_id.touched) && user_id.invalid" class="error-message">Veuillez remplir ce champ</div>
     </div>
-    <div class="form-group user-box" [ngClass]="{'has-error': password.invalid && password.touched}">
+    <div class="form-group user-box" [ngClass]="{'has-error': (formSubmitted || password.touched) && password.invalid}">
       <input type="password" [formControl]="password" required />
       <label>Mot de passe</label>
-      <div *ngIf="password.invalid && password.touched" class="error-message">Veuillez remplir ce champ</div>
+      <div *ngIf="(formSubmitted || password.touched) && password.invalid" class="error-message">Veuillez remplir ce champ</div>
     </div>
     <button class="submit-button" (click)="onSubmit()">Envoyer</button>
   </div>
