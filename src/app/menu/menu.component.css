@@ -20,6 +20,7 @@
 
 .nav-item {
 	min-width: 12vw;
+	margin-left: 15px;
 }
 
 #mainNavigation {
