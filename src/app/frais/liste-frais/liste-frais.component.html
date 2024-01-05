@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <table>
     <thead>
     <tr>
@@ -17,4 +17,20 @@
     </tr>
     </tbody>
   </table>
+</div> -->
+<div class="container">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col1">ID Frais</div>
+      <div class="col col2">Année/Mois</div>
+      <div class="col col3">Etat</div>
+      <div class="col col4">Modifier</div>
+    </li>
+    <li class="table-row" *ngFor="let frais of getListeFrais() | async">
+      <div class="col col1" data-label="ID Frais">{{ frais.id_frais }}</div>
+      <div class="col col2" data-label="Année/Mois">{{ frais.anneemois }}</div>
+      <div class="col col3" data-label="Etat">{{ frais.lib_etat }}</div>
+      <div class="col col4" data-label="Modifier"><button (click)="afficherDetailsFrais(frais.id_frais)" class="btn btn-info bi bi-plus"></button></div>
+    </li>
+  </ul>
 </div>
