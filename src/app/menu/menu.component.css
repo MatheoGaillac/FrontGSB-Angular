@@ -1,3 +1,12 @@
+#mainNavigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 123;
+	background-color: #00455a;
+}
+
 #mainNavigation a {
 	font-size: 14px;
 	text-transform: uppercase;
@@ -20,14 +29,6 @@
 .nav-item {
 	min-width: 12vw;
 	margin-left: 15px;
-}
-
-#mainNavigation {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 123;
 }
 
 .menu-button {
