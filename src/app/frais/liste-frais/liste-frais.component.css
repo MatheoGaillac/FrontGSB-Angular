@@ -20,6 +20,7 @@
 		font-size: 14px;
 		text-transform: uppercase;
 		letter-spacing: 0.03em;
+		box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.473);
 	}
 
 	.table-row {
@@ -70,3 +71,14 @@
 		}
 	}
 }
+
+.button {
+	line-height: 1;
+	display: inline-block;
+	font-size: 1.2rem;
+	text-decoration: none;
+	border-radius: 5px;
+	color: #fff;
+	padding: 8px;
+	background-color: rgba(144, 140, 170, 0.95);
+  }
