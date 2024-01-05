@@ -30,14 +30,17 @@
 
 	.col1 {
 		flex-basis: 15%;
+		transform: translateY(10%);
 	}
 
 	.col2 {
 		flex-basis: 20%;
+		transform: translateY(10%);
 	}
 
 	.col3 {
 		flex-basis: 40%;
+		transform: translateY(10%);
 	}
 
 	.col4 {
@@ -76,11 +79,14 @@
 .button {
 	line-height: 1;
 	display: inline-block;
-	font-size: 1.2rem;
 	text-decoration: none;
 	border-radius: 5px;
-	color: #fff;
-	padding: 8px;
-	background-color: rgba(144, 140, 170, 0.95);
+	padding: 4px;
+	background-color: rgba(56, 56, 56, 0.95);
 	margin: 0 auto;
-  }
+}
+
+.button i {
+	font-size: 15px;
+	color: #fff;
+}
