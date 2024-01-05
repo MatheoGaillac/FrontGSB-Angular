@@ -80,6 +80,7 @@
 	line-height: 1;
 	display: inline-block;
 	text-decoration: none;
+	border: none;
 	border-radius: 5px;
 	padding: 4px;
 	background-color: rgba(56, 56, 56, 0.95);
