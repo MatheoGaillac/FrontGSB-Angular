@@ -13,7 +13,7 @@
     <li class="table-row" *ngFor="let frais of getListeFrais() | async">
       <div class="col col1" data-label="ID Frais">{{ frais.id_frais }}</div>
       <div class="col col2" data-label="Année/Mois">{{ frais.anneemois }}</div>
-      <div class="col col3" data-label="Date Modification">{{ frais.datemodification }}</div>
+      <div class="col col3" data-label="Date Modification">{{ frais.datemodification | date:'yyyy/MM/dd' }}</div>
       <div class="col col4" data-label="Montant Validé">{{ frais.montantvalide }}</div>
       <div class="col col5" data-label="Nombre de justificatifs">{{ frais.nbjustificatifs }}</div>
       <div class="col col6" data-label="Id Visiteur">{{ frais.id_visiteur }}</div>
