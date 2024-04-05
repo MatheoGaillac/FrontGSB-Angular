@@ -24,7 +24,7 @@ export class GsbFraisService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.gsb_api.recupererBearer()
     });
-    return this.http.get<Frais[]>('http://127.0.0.1:8000/api/frais/getFrais/' +
+    return this.http.get<Frais[]>('http://wsgsb.mgail.etu.lmdsio.com/api/frais/getFrais/' +
       this.gsb_api.visiteurId(), {headers: headers}).subscribe(
       data => {
         this.listeFrais = data;
@@ -38,7 +38,7 @@ export class GsbFraisService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.gsb_api.recupererBearer()
     });
-    return this.http.get<Frais>('http://127.0.0.1:8000/api/frais/getUnFrais/' +
+    return this.http.get<Frais>('http://wsgsb.mgail.etu.lmdsio.com/api/frais/getUnFrais/' +
       id_frais, {headers: headers})
   }
 
@@ -60,7 +60,7 @@ export class GsbFraisService {
       "datemodification": formattedDate
     };
 
-    this.http.post<Frais>(`http://127.0.0.1:8000/api/frais/updateFrais`
+    this.http.post<Frais>(`http://wsgsb.mgail.etu.lmdsio.com/api/frais/updateFrais`
       , requestObject, {headers: headers})
       .subscribe(
         data => {

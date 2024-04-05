@@ -22,7 +22,7 @@ export class GsbShortService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer' + this.gsb_api.recupererBearer()
     });
-    return this.http.get<Etat[]>('http://127.0.0.1:8000/api/frais/getEtats',
+    return this.http.get<Etat[]>('http://wsgsb.mgail.etu.lmdsio.com/api/frais/getEtats',
       {headers: headers}).subscribe(
         data => {
           this.listeEtat = data;
