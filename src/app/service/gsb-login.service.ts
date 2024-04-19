@@ -15,7 +15,9 @@ export class GsbLoginService {
   public errorMessage: string = '';
   private dataStore: { login: Login[] } = { login: [] };
   readonly appels_termines = this._responses.asObservable();
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+    this.loadLoginState();
+  }
 
   serviceEnvoieLogin(email: string, password: string) {
     const requestObject = new Visiteur({ login: email, password: password });
@@ -26,6 +28,7 @@ export class GsbLoginService {
           this.login = new Login(data);
           this.dataStore.login.push(data);
           this.isLogin = true;
+          this.saveLoginState();
           this._responses.next(this.dataStore.login);
           this.router.navigate(['/frais/liste']);
         },
@@ -56,15 +59,37 @@ export class GsbLoginService {
     return this.isLogin;
   }
 
-  getErrorStatus(): string{
+  getErrorStatus(): string {
     return this.errorMessage;
   }
+
+    // Enregistre l'état de connexion dans le stockage local
+    private saveLoginState() {
+      localStorage.setItem('loginState', JSON.stringify(this.login));
+      localStorage.setItem('isLogin', JSON.stringify(this.isLogin));
+    }
+  
+    // Charge l'état de connexion depuis le stockage local
+    private loadLoginState() {
+      const savedLogin = localStorage.getItem('loginState');
+      const isLogin = localStorage.getItem('isLogin');
+    
+      if (savedLogin) {
+        this.login = JSON.parse(savedLogin);
+      }
+    
+      if (isLogin) {
+        this.isLogin = JSON.parse(isLogin);
+      }
+    }
 
   logout() {
     this.login = new Login();
     this.dataStore.login = [];
     this._responses.next(this.dataStore.login);
     this.isLogin = false;
+    localStorage.removeItem('loginState'); // Supprime l'état de connexion du stockage local
+    localStorage.removeItem('isLogin');
     this.router.navigate(['/login']);
   }
 }
