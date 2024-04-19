@@ -1,26 +1,27 @@
 <div class="container">
+	<input type="text" id="critere" placeholder="Rechercher..." (input)="onSearchChange($event)">
 	<ul class="responsive-table">
-	  <li class="table-header">
-		<div class="col col1">ID Frais</div>
-		<div class="col col2">Année/Mois</div>
-		<div class="col col3">Date Modification</div>
-		<div class="col col4">Montant Validé</div>
-		<div class="col col5">Nombre de justificatifs</div>
-		<div class="col col6">Id Visiteur</div>
-		<div class="col col7">Etat</div>
-		<div class="col col8">Modifier</div>
-	  </li>
-	  <li class="table-row" *ngFor="let praticiens of getListePraticiens() | async">
-		<div class="col col1" data-label="ID Frais">{{ praticiens.id_praticien }}</div>
-		<div class="col col2" data-label="Année/Mois">{{ praticiens.id_type_praticien }}</div>
-		<div class="col col3" data-label="Date Modification">{{ praticiens.nom_praticien }}</div>
-		<div class="col col4" data-label="Montant Validé">{{ praticiens.prenom_praticien }}</div>
-		<div class="col col5" data-label="Nombre de justificatifs">{{ praticiens.adresse_praticien }}</div>
-		<div class="col col6" data-label="Id Visiteur">{{ praticiens.cp_praticien }}</div>
-		<div class="col col7" data-label="Etat">{{ praticiens.ville_praticien }}</div>
-		<div class="col col8" data-label="Modifier">
-			 <i class="material-icons">create</i>
-	   </div>     
-	  </li>
+		<li class="table-header">
+			<div class="col col1">ID</div>
+			<div class="col col2">Type</div>
+			<div class="col col3">Nom</div>
+			<div class="col col4">Prénom</div>
+			<div class="col col5">Adresse</div>
+			<div class="col col6">Code</div>
+			<div class="col col7">Etat</div>
+			<div class="col col8">Modifier</div>
+		</li>
+		<li class="table-row" *ngFor="let praticiens of getListePraticiens() | async">
+			<div class="col col1" data-label="ID Frais">{{ praticiens.id_praticien }}</div>
+			<div class="col col2" data-label="Année/Mois">{{ praticiens.id_type_praticien }}</div>
+			<div class="col col3" data-label="Date Modification">{{ praticiens.nom_praticien }}</div>
+			<div class="col col4" data-label="Montant Validé">{{ praticiens.prenom_praticien }}</div>
+			<div class="col col5" data-label="Nombre de justificatifs">{{ praticiens.adresse_praticien }}</div>
+			<div class="col col6" data-label="Id Visiteur">{{ praticiens.cp_praticien }}</div>
+			<div class="col col7" data-label="Etat">{{ praticiens.ville_praticien }}</div>
+			<div class="col col8" data-label="Modifier">
+				<i class="material-icons">create</i>
+			</div>
+		</li>
 	</ul>
-  </div>
+</div>
