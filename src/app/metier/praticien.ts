@@ -1,6 +1,7 @@
 export class Praticien {
 
   public id_praticien: number = 0;
+  public type_praticien: any = {};
   public id_type_praticien: number = 0;
   public nom_praticien: string = "";
   public prenom_praticien: string = "";
@@ -12,6 +13,7 @@ export class Praticien {
   constructor(json?: any) {
     if (json) {
       this.id_praticien = json.id_praticien;
+      this.type_praticien = json.type_praticien;
       this.id_type_praticien = json.id_type_praticien;
       this.nom_praticien = json.nom_praticien;
       this.prenom_praticien = json.prenom_praticien;
