@@ -20,6 +20,9 @@
         <li class="nav-item" *ngIf="isLoggedIn()">
           <a class="nav-link" routerLink="/frais/liste" (click)="closeDropdown()">Liste Frais</a>
         </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" routerLink="/praticiens/liste" (click)="closeDropdown()">Liste Praticiens</a>
+        </li>
         <li class="nav-item" *ngIf="isLoggedIn()" (click)="logout()">
           <a class="nav-link" routerLink="/logout" (click)="closeDropdown()">Se déconnecter</a>
         </li>
