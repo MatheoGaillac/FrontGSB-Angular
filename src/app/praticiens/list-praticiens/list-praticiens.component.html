@@ -24,8 +24,10 @@
 				<td>{{ praticien.cp_praticien }}</td>
 				<td>{{ praticien.ville_praticien }}</td>
 				<td>
-					<mat-icon aria-label="Ajouter">add_circle_outline</mat-icon>
-				</td>				
+					<button mat-icon-button (click)="afficherDetailsPraticien(praticien.id_praticien)">
+						<mat-icon aria-label="Ajouter">add_circle_outline</mat-icon>
+					</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>

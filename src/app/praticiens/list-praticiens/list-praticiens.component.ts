@@ -33,4 +33,8 @@ export class ListPraticiensComponent {
   getListePraticiens() {
     return this.praticien_api.appels_termines;
   }
+
+  afficherDetailsPraticien(id_praticien: number) {
+    this.router.navigate(['/praticiens/liste', id_praticien]);
+  }
 }

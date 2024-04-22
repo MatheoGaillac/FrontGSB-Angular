@@ -6,6 +6,7 @@ import {HomeComponent} from "./home/home.component";
 import {GsbLoginService} from "./service/gsb-login.service";
 import {inject} from "@angular/core";
 import {AfficheFraisComponent} from "./frais/affiche-frais/affiche-frais.component";
+import { AffichePraticienComponent } from './praticiens/affiche-praticien/affiche-praticien.component';
 
 export const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -13,6 +14,7 @@ export const routes: Routes = [
   {path: 'frais/liste', component: ListeFraisComponent, canActivate: [authentificationGuard()]},
   {path: 'praticiens/liste', component: ListPraticiensComponent, canActivate: [authentificationGuard()]},
   {path: 'frais/liste/:id_frais', component: AfficheFraisComponent, canActivate: [authentificationGuard()]},
+  {path: 'praticiens/liste/:id_praticien', component: AffichePraticienComponent, canActivate: [authentificationGuard()]},
   {path: 'home', component: HomeComponent},
 ];
 
