@@ -7,11 +7,6 @@ body {
 	margin: 0;
 }
 
-body.app-body {
-	background: linear-gradient(to bottom, #00455a 0%, #0190bb 100%);
-	font-family: New Century Schoolbook, "TeX Gyre Schola", serif;
-}
-
 #routerOutletContainer {
 	padding-top: 200px;
 }

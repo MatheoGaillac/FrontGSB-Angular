@@ -1,28 +1,32 @@
 <div class="container">
-  <ul class="responsive-table">
-    <li class="table-header">
-      <div class="col col1">ID Frais</div>
-      <div class="col col2">Année/Mois</div>
-      <div class="col col3">Date Modification</div>
-      <div class="col col4">Montant Validé</div>
-      <div class="col col5">Nombre de justificatifs</div>
-      <div class="col col6">Id Visiteur</div>
-      <div class="col col7">Etat</div>
-      <div class="col col8">Modifier</div>
-    </li>
-    <li class="table-row" *ngFor="let frais of getListeFrais() | async">
-      <div class="col col1" data-label="ID Frais">{{ frais.id_frais }}</div>
-      <div class="col col2" data-label="Année/Mois">{{ frais.anneemois }}</div>
-      <div class="col col3" data-label="Date Modification">{{ frais.datemodification | date:'yyyy/MM/dd' }}</div>
-      <div class="col col4" data-label="Montant Validé">{{ frais.montantvalide }}</div>
-      <div class="col col5" data-label="Nombre de justificatifs">{{ frais.nbjustificatifs }}</div>
-      <div class="col col6" data-label="Id Visiteur">{{ frais.id_visiteur }}</div>
-      <div class="col col7" data-label="Etat">{{ frais.lib_etat }}</div>
-      <div class="col col8" data-label="Modifier">
-        <button (click)="afficherDetailsFrais(frais.id_frais)" class="button">
-           <i class="material-icons">create</i>
-        </button>
-     </div>     
-    </li>
-  </ul>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID Frais</th>
+        <th scope="col">Année/Mois</th>
+        <th scope="col">Date Modification</th>
+        <th scope="col">Montant Validé</th>
+        <th scope="col">Nombre de justificatifs</th>
+        <th scope="col">Id Visiteur</th>
+        <th scope="col">Etat</th>
+        <th scope="col">Modifier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let frais of getListeFrais() | async">
+        <td>{{ frais.id_frais }}</td>
+        <td>{{ frais.anneemois }}</td>
+        <td>{{ frais.datemodification | date:'yyyy/MM/dd' }}</td>
+        <td>{{ frais.montantvalide }}</td>
+        <td>{{ frais.nbjustificatifs }}</td>
+        <td>{{ frais.id_visiteur }}</td>
+        <td>{{ frais.lib_etat }}</td>
+        <td>
+          <button mat-icon-button (click)="afficherDetailsFrais(frais.id_frais)">
+            <mat-icon aria-label="Modifier">create</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

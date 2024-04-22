@@ -4,7 +4,6 @@
 	left: 0;
 	width: 100%;
 	z-index: 123;
-	background-color: #00455a;
 }
 
 #mainNavigation a {
@@ -15,7 +14,7 @@
 }
 
 .logo {
-	width: 150px;
+	width: 100px;
 }
 
 .nav-item a {
@@ -32,14 +31,12 @@
 }
 
 .menu-button {
-	font-family: 'Cabin', sans-serif;
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 	color: #ffffff;
 	min-width: 12vw;
-	background-color: #037582;
 }
 
 .menu-button:hover {
@@ -48,6 +45,5 @@
 
 #navbarNavDropdown.collapsing .navbar-nav,
 #navbarNavDropdown.show .navbar-nav {
-	background: #037582;
 	padding: 8px;
 }

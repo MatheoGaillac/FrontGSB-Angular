@@ -17,8 +17,8 @@
     <select class="form-control" id="id_etat" [formControl]="id_etat">
       <option *ngFor="let etat of getListeEtats() | async" [value]="etat.id_etat"> {{ etat.lib_etat }} </option>
     </select>
-   </div>
+  </div>
   <br>
-  <button type="button" class="btn" (click)="onSubmitFicheFrais()">Envoyer</button>
-  <button type="button" class="btn" (click)="onCancel()">Annuler</button>
+  <button type="button" class="btn btn-primary" (click)="onSubmitFicheFrais()">Envoyer</button>
+  <button type="button" class="btn btn-secondary" (click)="onCancel()">Annuler</button>
 </div>

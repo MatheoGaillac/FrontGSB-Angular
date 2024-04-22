@@ -2,13 +2,17 @@ import { Component, Renderer2 } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {CommonModule} from '@angular/common';
 import {GsbLoginService} from "../service/gsb-login.service";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
   imports: [
     RouterLink,
-    CommonModule
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
   ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'

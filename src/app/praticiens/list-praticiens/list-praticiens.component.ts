@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from '../../menu/menu.component';
+import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PraticienService } from '../../service/praticien.service';
@@ -7,7 +8,7 @@ import { PraticienService } from '../../service/praticien.service';
 @Component({
   selector: 'app-list-praticiens',
   standalone: true,
-  imports: [MenuComponent, CommonModule],
+  imports: [MenuComponent, CommonModule, MatIconModule],
   templateUrl: './list-praticiens.component.html',
   styleUrl: './list-praticiens.component.css',
 })
