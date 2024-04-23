@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from '../../menu/menu.component';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PraticienService } from '../../service/praticien.service';
@@ -21,7 +20,7 @@ export class AffichePraticienComponent {
   public praticien: Praticien | null = null;
   public inviter: Inviter | null = null;
 
-  constructor(private praticien_api: PraticienService, private inviter_api: InviterService, private route: ActivatedRoute) {}
+  constructor(private praticien_api: PraticienService, private inviter_api: InviterService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void{
     this.id_praticien = parseInt(this.route.snapshot.paramMap.get('id_praticien')!);
@@ -36,5 +35,9 @@ export class AffichePraticienComponent {
 
   getListInvitationPraticien() {
     return this.inviter_api.appels_termines;
+  }
+
+  modifierInvitation(id_praticien: number, id_activite_compl: number) {
+    this.router.navigate(['/praticiens/modifier', id_praticien, id_activite_compl]);
   }
 }
