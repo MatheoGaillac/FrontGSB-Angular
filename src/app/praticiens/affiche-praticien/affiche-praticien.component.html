@@ -1,13 +1,30 @@
 <div *ngIf="praticien">
 	<h2>Détails du praticien</h2>
 	<ul>
-	  <li><strong>ID :</strong> {{ praticien.id_praticien }}</li>
-	  <li><strong>Nom :</strong> {{ praticien.nom_praticien }}</li>
-	  <li><strong>Prénom :</strong> {{ praticien.prenom_praticien }}</li>
-	  <li><strong>Adresse :</strong> {{ praticien.adresse_praticien }}</li>
-	  <li><strong>Code postal :</strong> {{ praticien.cp_praticien }}</li>
-	  <li><strong>Ville :</strong> {{ praticien.ville_praticien }}</li>
-	  <li><strong>Coeficient de notoriété :</strong> {{ praticien.coef_notoriete }}</li>
+		<li><strong>ID :</strong> {{ praticien.id_praticien }}</li>
+		<li><strong>Nom :</strong> {{ praticien.nom_praticien }}</li>
+		<li><strong>Prénom :</strong> {{ praticien.prenom_praticien }}</li>
+		<li><strong>Adresse :</strong> {{ praticien.adresse_praticien }}</li>
+		<li><strong>Code postal :</strong> {{ praticien.cp_praticien }}</li>
+		<li><strong>Ville :</strong> {{ praticien.ville_praticien }}</li>
+		<li><strong>Coeficient de notoriété :</strong> {{ praticien.coef_notoriete }}</li>
 	</ul>
-  </div>
-  
+</div>
+<table class="table table-striped">
+	<thead class="thead-dark">Liste des invitations aux activités complémentaires
+		<tr class="text-center">
+			<th scope="col">Thème</th>
+			<th scope="col">Date</th>
+			<th scope="col">Lieu</th>
+			<th scope="col">Motif</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let invitation of getListInvitationPraticien() | async" class="text-center">
+			<td>{{ invitation.theme_activite }}</td>
+			<td>{{ invitation.date_activite }}</td>
+			<td>{{ invitation.lieu_activite }}</td>
+			<td>{{ invitation.motif_activite }}</td>
+		</tr>
+	</tbody>
+</table>
