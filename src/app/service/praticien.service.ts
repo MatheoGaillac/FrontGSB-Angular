@@ -13,7 +13,6 @@ export class PraticienService {
   private _reponses = new BehaviorSubject<Praticien[]>([]);
   readonly appels_termines = this._reponses.asObservable();
   public listPraticien: Praticien[] = [];
-  public dataStore: { praticien: Praticien[] } = { praticien: [] };
 
   constructor(
     private http: HttpClient,
@@ -36,5 +35,13 @@ export class PraticienService {
         },
         (error) => console.log('Erreur appel API')
       );
+  }
+
+  getUnPraticien(id_praticien: number) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.gsb_api.recupererBearer()
+    });
+    return this.http.get<Praticien>('http://127.0.0.1:8000/api/praticien/getPraticienByID/' +
+    id_praticien, {headers: headers})
   }
 }

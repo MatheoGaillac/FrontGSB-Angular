@@ -1,1 +1,13 @@
-<p>affiche-praticien works!</p>
+<div *ngIf="praticien">
+	<h2>Détails du praticien</h2>
+	<ul>
+	  <li><strong>ID :</strong> {{ praticien.id_praticien }}</li>
+	  <li><strong>Nom :</strong> {{ praticien.nom_praticien }}</li>
+	  <li><strong>Prénom :</strong> {{ praticien.prenom_praticien }}</li>
+	  <li><strong>Adresse :</strong> {{ praticien.adresse_praticien }}</li>
+	  <li><strong>Code postal :</strong> {{ praticien.cp_praticien }}</li>
+	  <li><strong>Ville :</strong> {{ praticien.ville_praticien }}</li>
+	  <li><strong>Coeficient de notoriété :</strong> {{ praticien.coef_notoriete }}</li>
+	</ul>
+  </div>
+  
