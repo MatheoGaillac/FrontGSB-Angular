@@ -6,7 +6,8 @@ export class Inviter {
 	public lieu_activite: string = "";
 	public theme_activite: string = "";
 	public motif_activite: string = "";
-  
+	public praticien: any;
+
 	constructor(json?: any) {
 	  if (json) {
 		this.id_activite_compl = json.id_activite_compl;
@@ -16,6 +17,7 @@ export class Inviter {
 		this.lieu_activite = json.lieu_activite;
 		this.theme_activite = json.theme_activite;
 		this.motif_activite = json.motif_activite;
+		this.praticien = json.praticien;
 	  }
 	}
   

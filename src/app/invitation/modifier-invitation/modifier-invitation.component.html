@@ -1,0 +1,19 @@
+<div class="container">
+	<h2>Modifier l'invitation</h2>
+	<div class="form-group">
+		<label for="nomPrenomPraticien">Nom et Prénom du praticien</label>
+		<input type="text" class="form-control" id="nomPrenomPraticien"
+			[value]="praticien?.nom_praticien + ' ' + praticien?.prenom_praticien" readonly>
+	</div>
+	<div class="form-group" hidden>
+		<label for="ancienIdActivite">Ancienne activité</label>
+		<input type="text" class="form-control" id="ancienIdActivite" [value]="old_id_activite_compl" readonly>
+	</div>
+	<div class="form-group">
+		<label for="nouvelleActivite">Nouvelle activité</label>
+		<input type="text" class="form-control" id="nouvelleActivite" [formControl]="id_activite_compl">
+	</div>
+	<br>
+	<button type="button" class="btn btn-primary" (click)="onSubmitFicheInviter()">Envoyer</button>
+	<button type="button" class="btn btn-secondary" (click)="onCancel()">Annuler</button>
+</div>
