@@ -17,7 +17,7 @@
 		<tbody>
 			<tr *ngFor="let praticien of getListePraticiens() | async" class="text-center">
 				<td>{{ praticien.id_praticien }}</td>
-				<td>{{ praticien.type_praticien.lib_type_praticien }}</td>
+				<td>{{ praticien.type_praticien?.lib_type_praticien }}</td>
 				<td>{{ praticien.nom_praticien }}</td>
 				<td>{{ praticien.prenom_praticien }}</td>
 				<td>{{ praticien.adresse_praticien }}</td>
