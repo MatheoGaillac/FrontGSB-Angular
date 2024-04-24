@@ -55,6 +55,10 @@ export class GsbLoginService {
     return this.login.visiteur.id_visiteur;
   }
 
+  visiteurType(): string {
+    return this.login.visiteur.type_visiteur;
+  }
+
   public getIsLogin(): boolean {
     return this.isLogin;
   }
