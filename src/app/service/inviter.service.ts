@@ -69,7 +69,11 @@ export class InviterService {
           console.log("Appel réussi");
         },
         error => {
-          console.log("Erreur Appel API", error);
+          if (error.status === 500) {
+            console.log("L'invitation existe déjà !");
+          } else {
+            console.log("Erreur Appel API", error);
+          }
         }
       );
   }
