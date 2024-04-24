@@ -47,6 +47,33 @@ export class InviterService {
     id_praticien + '/' + id_activite_compl, { headers: headers });
   }
 
+  createInvitation(id_activite_compl: number, id_praticien: number, specialiste: string) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.gsb_api.recupererBearer()
+    });
+
+    const requestObject = {
+      "id_activite_compl": id_activite_compl,
+      "id_praticien": id_praticien,
+      "specialiste": specialiste
+    };
+
+    this.http.post<Inviter>(`http://127.0.0.1:8000/api/praticien/addInvitation`
+      , requestObject, {headers: headers})
+      .subscribe(
+        data => {
+          this.inviter = new Inviter(data);
+          this.dataStore.inviter.push(this.inviter);
+          this._reponses.next(this.dataStore.inviter);
+          this.router.navigate(['praticiens/liste/'+ id_praticien]);
+          console.log("Appel réussi");
+        },
+        error => {
+          console.log("Erreur Appel API", error);
+        }
+      );
+  }
+
   updateInviter(id_activite_compl: number, id_praticien: number, old_id_activite_compl: number) {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.gsb_api.recupererBearer()

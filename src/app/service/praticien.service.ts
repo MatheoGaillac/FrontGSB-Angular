@@ -44,4 +44,19 @@ export class PraticienService {
     return this.http.get<Praticien>('http://127.0.0.1:8000/api/praticien/getPraticienByID/' +
     id_praticien, {headers: headers})
   }
+
+  getListePraticiens() {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer' + this.gsb_api.recupererBearer()
+    });
+    return this.http.get<Praticien[]>('http://127.0.0.1:8000/api/praticien/getAllPraticiens',
+      {headers: headers}).subscribe(
+        data => {
+          this.listPraticien = data;
+          this._reponses.next(this.listPraticien);
+          console.log("Appel API liste Praticiens Réussis")
+        },
+      error => console.log("Erreur Appel API liste Praticiens")
+    )
+  }
 }
