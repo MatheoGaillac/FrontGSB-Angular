@@ -5,11 +5,12 @@ import { InviterService } from '../../service/inviter.service';
 import { Inviter } from '../../metier/inviter';
 import { AsyncPipe, CommonModule, Location } from '@angular/common';
 import { Praticien } from '../../metier/praticien';
+import { GsbShortService } from '../../service/gsb-short.service';
 
 @Component({
   selector: 'app-modifier-invitation',
   standalone: true,
-  imports: [ AsyncPipe, CommonModule, ReactiveFormsModule ],
+  imports: [AsyncPipe, CommonModule, ReactiveFormsModule],
   templateUrl: './modifier-invitation.component.html',
   styleUrl: './modifier-invitation.component.css',
 })
@@ -22,6 +23,7 @@ export class ModifierInvitationComponent {
   constructor(
     route: ActivatedRoute,
     private inviter_api: InviterService,
+    private short_api: GsbShortService,
     private location: Location
   ) {
     this.id_praticien = parseInt(route.snapshot.paramMap.get('id_praticien')!);
@@ -38,6 +40,11 @@ export class ModifierInvitationComponent {
         },
         (error) => console.log('Erreur appel API')
       );
+      this.short_api.getListeActivite();
+  }
+
+  getListeActivite() {
+    return this.short_api.appels_terminesActivite;
   }
 
   onSubmitFicheInviter() {

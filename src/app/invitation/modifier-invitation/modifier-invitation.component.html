@@ -5,15 +5,18 @@
 		<input type="text" class="form-control" id="nomPrenomPraticien"
 			[value]="praticien?.nom_praticien + ' ' + praticien?.prenom_praticien" readonly>
 	</div>
+	<br>
 	<div class="form-group" hidden>
 		<label for="ancienIdActivite">Ancienne activité</label>
 		<input type="text" class="form-control" id="ancienIdActivite" [value]="old_id_activite_compl" readonly>
 	</div>
 	<div class="form-group">
 		<label for="nouvelleActivite">Nouvelle activité</label>
-		<input type="text" class="form-control" id="nouvelleActivite" [formControl]="id_activite_compl">
-	</div>
+		<select class="form-control" id="nouvelleActivite" [formControl]="id_activite_compl">
+		  <option *ngFor="let activite of getListeActivite() | async" [value]="activite.id_activite_compl"> {{ activite.theme_activite }} </option>
+		</select>
+	  </div>
 	<br>
-	<button type="button" class="btn btn-primary" (click)="onSubmitFicheInviter()">Envoyer</button>
+	<button type="button" class="btn btn-primary" (click)="onSubmitFicheInviter()">Envoyer</button>&nbsp;
 	<button type="button" class="btn btn-secondary" (click)="onCancel()">Annuler</button>
 </div>
