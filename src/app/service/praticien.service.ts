@@ -33,7 +33,8 @@ export class PraticienService {
           this.listPraticien = data;
           this._reponses.next(this.listPraticien);
         },
-        (error) => console.log('Erreur appel API')
+        (error) => console.log('Erreur appel API', error)
+
       );
   }
 

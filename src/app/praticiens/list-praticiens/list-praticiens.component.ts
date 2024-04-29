@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { MenuComponent } from '../../menu/menu.component';
-import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { PraticienService } from '../../service/praticien.service';
+import {Component, OnInit} from '@angular/core';
+import {MenuComponent} from '../../menu/menu.component';
+import {MatIconModule} from '@angular/material/icon';
+import {CommonModule} from '@angular/common';
+import {Router} from '@angular/router';
+import {PraticienService} from '../../service/praticien.service';
 
 @Component({
   selector: 'app-list-praticiens',
@@ -18,16 +18,13 @@ export class ListPraticiensComponent {
   constructor(
     private praticien_api: PraticienService,
     private router: Router
-  ) {}
-
-  ngOnInit() {
-    // Afficher tous les praticiens au chargement initial du composant
-    this.praticien_api.listSearchPraticiens('');
+  ) {
+    this.praticien_api.listSearchPraticiens(this.critere);
   }
 
   onSearchChange(event: any) {
-    this.critere = event.target.value; // Met à jour la variable critere avec le texte saisi
-    this.praticien_api.listSearchPraticiens(this.critere); // Appelle listSearchPraticiens avec le nouveau critère
+    this.critere = event.target.value;
+    this.praticien_api.listSearchPraticiens(this.critere);
   }
 
   getListePraticiens() {
