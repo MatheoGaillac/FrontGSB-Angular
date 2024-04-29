@@ -27,7 +27,7 @@ export class InviterService {
     });
     return this.http
       .get<Inviter[]>(
-        'http://127.0.0.1:8000/api/praticien/getInvitationPraticien/' +
+        'http://wsgsb.mgail.etu.lmdsio.com/api/praticien/getInvitationPraticien/' +
           id_praticien
       )
       .subscribe(
@@ -44,7 +44,7 @@ export class InviterService {
       Authorization: 'Bearer ' + this.gsb_api.recupererBearer(),
     });
     return this.http.get<Inviter>(
-      'http://127.0.0.1:8000/api/praticien/getUneInvitation/' +
+      'http://wsgsb.mgail.etu.lmdsio.com/api/praticien/getUneInvitation/' +
         id_praticien +
         '/' +
         id_activite_compl,
@@ -69,7 +69,7 @@ export class InviterService {
 
     this.http
       .post<Inviter>(
-        `http://127.0.0.1:8000/api/praticien/addInvitation`,
+        `http://wsgsb.mgail.etu.lmdsio.com/api/praticien/addInvitation`,
         requestObject,
         { headers: headers }
       )
@@ -108,7 +108,7 @@ export class InviterService {
 
     this.http
       .post<Inviter>(
-        `http://127.0.0.1:8000/api/praticien/updateInvitation/`,
+        `http://wsgsb.mgail.etu.lmdsio.com/api/praticien/updateInvitation/`,
         requestObject,
         { headers: headers }
       )
@@ -132,7 +132,7 @@ export class InviterService {
     });
 
     return this.http.post<any>(
-      `http://127.0.0.1:8000/api/praticien/deleteInvitation`,
+      `http://wsgsb.mgail.etu.lmdsio.com/api/praticien/deleteInvitation`,
       { id_activite_compl: idActiviteCompl, id_praticien: idPraticien },
       { headers: headers }
     );

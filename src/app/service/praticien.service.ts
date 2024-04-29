@@ -26,7 +26,7 @@ export class PraticienService {
     });
     return this.http
       .get<Praticien[]>(
-        'http://127.0.0.1:8000/api/praticien/getPraticien/' + critere
+        'http://wsgsb.mgail.etu.lmdsio.com/api/praticien/getPraticien/' + critere
       )
       .subscribe(
         (data) => {
@@ -41,7 +41,7 @@ export class PraticienService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.gsb_api.recupererBearer()
     });
-    return this.http.get<Praticien>('http://127.0.0.1:8000/api/praticien/getPraticienByID/' +
+    return this.http.get<Praticien>('http://wsgsb.mgail.etu.lmdsio.com/api/praticien/getPraticienByID/' +
     id_praticien, {headers: headers})
   }
 
@@ -49,7 +49,7 @@ export class PraticienService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer' + this.gsb_api.recupererBearer()
     });
-    return this.http.get<Praticien[]>('http://127.0.0.1:8000/api/praticien/getAllPraticiens',
+    return this.http.get<Praticien[]>('http://wsgsb.mgail.etu.lmdsio.com/api/praticien/getAllPraticiens',
       {headers: headers}).subscribe(
         data => {
           this.listPraticien = data;

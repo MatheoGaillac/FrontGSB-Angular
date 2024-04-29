@@ -22,7 +22,7 @@ export class GsbLoginService {
   serviceEnvoieLogin(email: string, password: string) {
     const requestObject = new Visiteur({ login: email, password: password });
     return this.http
-      .post<Login>('http://127.0.0.1:8000/api/login', requestObject)
+      .post<Login>('http://wsgsb.mgail.etu.lmdsio.com/api/login', requestObject)
       .subscribe(
         (data) => {
           this.login = new Login(data);
@@ -72,16 +72,16 @@ export class GsbLoginService {
       localStorage.setItem('loginState', JSON.stringify(this.login));
       localStorage.setItem('isLogin', JSON.stringify(this.isLogin));
     }
-  
+
     // Charge l'état de connexion depuis le stockage local
     private loadLoginState() {
       const savedLogin = localStorage.getItem('loginState');
       const isLogin = localStorage.getItem('isLogin');
-    
+
       if (savedLogin) {
         this.login = JSON.parse(savedLogin);
       }
-    
+
       if (isLogin) {
         this.isLogin = JSON.parse(isLogin);
       }
