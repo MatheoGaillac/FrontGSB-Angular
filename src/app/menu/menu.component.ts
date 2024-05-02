@@ -25,6 +25,10 @@ export class MenuComponent {
     return this.gsbLoginService.getIsLogin();
   }
 
+  isAdmin(): boolean {
+    return this.gsbLoginService.visiteurType() === 'A';
+  }
+
   logout(){
     this.gsbLoginService.logout();
   }
