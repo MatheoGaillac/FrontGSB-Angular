@@ -1,1 +1,24 @@
+<div class="container" *ngIf="!isLoggedIn()">
+  <h1 class="display-4 text-center mt-5">Bienvenue sur l'application Web de l'entreprise GSB</h1>
+  <p class="lead">Bienvenue sur l'application de gestion des frais médicaux de PharmaTech Solutions ! Cette plateforme
+    vous permet de suivre et de gérer les dépenses engagées par les praticiens lors de leurs visites médicales. Pour
+    accéder à toutes les fonctionnalités, veuillez vous connecter avec vos identifiants.</p>
+</div>
 
+<div class="container mt-4" *ngIf="isAdmin()">
+  <h1 class="display-4 text-center mt-5">Bienvenue sur l'application Web de l'entreprise GSB</h1>
+  <p class="lead">Bienvenue sur l'application de gestion des frais médicaux de PharmaTech Solutions ! En tant
+    qu'administrateur, vous avez un accès étendu aux fonctionnalités. Outre la gestion des frais médicaux, vous pouvez
+    également gérer les types de praticiens et envoyer des invitations aux activités complémentaires. Cette plateforme
+    vise à optimiser la gestion des activités médicales et à renforcer l'efficacité de nos équipes sur le terrain.</p>
+</div>
+
+<div class="container mt-4" *ngIf="isLoggedIn() && !isAdmin()">
+  <h1 class="display-4 text-center mt-5">Bienvenue sur l'application Web de l'entreprise GSB</h1>
+  <p class="lead">Bienvenue sur l'application de gestion des frais médicaux de PharmaTech Solutions ! En tant que
+    visiteur médical, vous pouvez utiliser cette plateforme pour lister, ajouter, modifier et supprimer vos frais de
+    déplacement et de représentation. Vous pouvez également gérer les invitations aux différentes activités
+    complémentaires. N'oubliez pas de mettre à jour régulièrement vos informations pour un suivi précis de vos
+    dépenses.</p>
+</div>
+s
