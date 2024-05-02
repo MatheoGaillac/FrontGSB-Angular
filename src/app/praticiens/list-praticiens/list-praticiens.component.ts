@@ -19,7 +19,7 @@ export class ListPraticiensComponent {
     private praticien_api: PraticienService,
     private router: Router
   ) {
-    this.praticien_api.listSearchPraticiens(this.critere);
+    this.praticien_api.listSearchPraticiens("");
   }
 
   onSearchChange(event: any) {
