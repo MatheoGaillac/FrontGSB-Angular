@@ -8,7 +8,7 @@ import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angula
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MenuComponent, MatIconModule],
+  imports: [CommonModule, ReactiveFormsModule, MenuComponent, MatIconModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })

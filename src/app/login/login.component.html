@@ -1,24 +1,24 @@
 <div class="container-all login-box">
   <h2>Identifiez-vous</h2>
   <div class="container">
-    <div class="form-group user-box" [ngClass]="{'has-error': (formSubmitted || user_id.touched) && user_id.invalid}">
-      <input type="text" [formControl]="user_id" required autofocus/>
-      <label>Nom d'utilisateur</label>
-      <div *ngIf="(formSubmitted || user_id.touched) && user_id.invalid" class="error-message">Veuillez remplir ce champ
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="form-group user-box" [ngClass]="{'has-error': (formSubmitted || user_id.touched) && user_id.invalid}">
+        <input type="text" [formControl]="user_id" required autofocus name="user_id" />
+        <label>Nom d'utilisateur</label>
+        <div *ngIf="(formSubmitted || user_id.touched) && user_id.invalid" class="error-message">Veuillez remplir ce champ</div>
       </div>
-    </div>
-    <div class="form-group user-box" [ngClass]="{'has-error': (formSubmitted || password.touched) && password.invalid}">
-      <div class="pass">
-        <input [type]="showPassword ? 'text' : 'password'" [formControl]="password" required />
-        <button type="button" (click)="toggleVisibility()" class="custom-icon-button">
-          <mat-icon aria-hidden="false" [fontIcon]="showPassword ? 'visibility' : 'visibility_off' "></mat-icon>
-        </button>
-        <label>Mot de passe</label>
+      <div class="form-group user-box" [ngClass]="{'has-error': (formSubmitted || password.touched) && password.invalid}">
+        <div class="pass">
+          <input [type]="showPassword ? 'text' : 'password'" [formControl]="password" required name="password" />
+          <button type="button" (click)="toggleVisibility()" class="custom-icon-button">
+            <mat-icon aria-hidden="false" [fontIcon]="showPassword ? 'visibility' : 'visibility_off' "></mat-icon>
+          </button>
+          <label>Mot de passe</label>
+        </div>
+        <div *ngIf="(formSubmitted || password.touched) && password.invalid" class="error-message">Veuillez remplir ce champ</div>
       </div>
-      <div *ngIf="(formSubmitted || password.touched) && password.invalid" class="error-message">Veuillez remplir ce
-        champ</div>
-    </div>
-    <div *ngIf="getErrorMessage() !== ''" class="error-message">{{ getErrorMessage() }}</div>
-    <button class="submit-button" (click)="onSubmit()">Envoyer</button>
+      <div *ngIf="getErrorMessage() !== ''" class="error-message">{{ getErrorMessage() }}</div>
+      <button type="submit" class="submit-button">Envoyer</button>
+    </form>
   </div>
 </div>
