@@ -1,0 +1,12 @@
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Ajustez la largeur selon vos besoins */
+  height: 40px; /* Ajustez la hauteur selon vos besoins */
+  border-radius: 50%; /* Rend le bouton rond */
+}
+
+.btn-icon i {
+  font-size: 24px; /* Taille de l'icône */
+}
