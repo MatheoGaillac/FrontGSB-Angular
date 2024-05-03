@@ -10,3 +10,19 @@
 .btn-icon i {
   font-size: 24px; /* Taille de l'icône */
 }
+.btn-add-invitation {
+  display: block;
+  margin: 0 auto; /* Centrage horizontal */
+  font-size: 1rem; /* Taille de police réduite */
+  padding: 8px 16px; /* Réduction de l'espacement autour du texte */
+  border-radius: 5px; /* Coins arrondis */
+  color: #fff; /* Couleur du texte */
+  background-color: #28a745; /* Couleur de fond */
+  border-color: #28a745; /* Couleur de la bordure */
+}
+
+.btn-add-invitation:hover {
+  background-color: #218838; /* Changement de couleur de fond au survol */
+  border-color: #1e7e34; /* Changement de couleur de la bordure au survol */
+}
+
