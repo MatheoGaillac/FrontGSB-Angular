@@ -19,7 +19,7 @@ export class AjouterInvitationComponent {
   specialiste: FormControl = new FormControl('');
 
   constructor(
-    route: ActivatedRoute,
+    private route: ActivatedRoute,
     private inviter_api: InviterService,
     private praticien_api: PraticienService,
     private short_api: GsbShortService,
@@ -27,6 +27,15 @@ export class AjouterInvitationComponent {
   ) {
     this.short_api.getListeActivite();
     this.praticien_api.getListePraticiens();
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const idPraticien = params.get('id_praticien');
+      if (idPraticien) {
+        this.id_praticien.setValue(idPraticien);
+      }
+    });
   }
 
   getListeActivite() {

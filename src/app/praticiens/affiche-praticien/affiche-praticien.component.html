@@ -13,9 +13,9 @@
         </li>
       </ul>
     </div>
+    <button type="button" class="btn btn-primary mt-3" (click)="onAddInvitation()">Ajouter une invitation</button>
   </div>
 </div>
-
 <div class="container">
   <h2 class="mt-4 mb-3">Liste des invitations aux activités complémentaires</h2>
   <table class="table table-striped text-center">
@@ -36,16 +36,17 @@
       <td>{{ invitation.lieu_activite }}</td>
       <td>{{ invitation.motif_activite }}</td>
       <td>
-        <button class="btn btn-outline-primary btn-icon" (click)="modifierInvitation(invitation.id_praticien, invitation.id_activite_compl)">
+        <button class="btn btn-outline-primary btn-icon"
+                (click)="modifierInvitation(invitation.id_praticien, invitation.id_activite_compl)">
           <i class="material-icons">create</i>
         </button>
       </td>
       <td>
-        <button class="btn btn-outline-danger btn-icon" (click)="confirmDelete(invitation.id_activite_compl, invitation.id_praticien)">
+        <button class="btn btn-outline-danger btn-icon"
+                (click)="confirmDelete(invitation.id_activite_compl, invitation.id_praticien)">
           <i class="material-icons">delete</i>
         </button>
       </td>
-
     </tr>
     </tbody>
   </table>

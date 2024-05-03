@@ -40,6 +40,10 @@ export class AffichePraticienComponent {
     this.inviter_api.listInvitationPraticien(this.id_praticien);
   }
 
+  onAddInvitation() {
+    this.router.navigate(['/invitation/ajouter', this.id_praticien]);
+  }
+
   getListInvitationPraticien() {
     return this.inviter_api.appels_termines;
   }

@@ -19,6 +19,7 @@ export const routes: Routes = [
   {path: 'praticiens/liste/:id_praticien', component: AffichePraticienComponent, canActivate: [authentificationGuard(), adminGuard()]},
   {path: 'praticiens/modifier/:id_praticien/:id_activite_compl', component: ModifierInvitationComponent, canActivate: [authentificationGuard(), adminGuard()]},
   {path: 'invitation/ajouter', component: AjouterInvitationComponent, canActivate: [authentificationGuard(), adminGuard()]},
+  {path: 'invitation/ajouter/:id_praticien', component: AjouterInvitationComponent, canActivate: [authentificationGuard(), adminGuard()]},
   {path: 'home', component: HomeComponent},
 ];
 
