@@ -1,5 +1,5 @@
 .submit-button {
-  background: rgba(224, 199, 199, 0.5);
+  background-color: #007bff;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -9,7 +9,7 @@
 }
 
 .submit-button:hover {
-  background: rgba(122, 121, 121, 0.5);
+  background-color: #0056b3;
 }
 
 .login-box {
@@ -19,16 +19,16 @@
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: #416165;
+  background: #f8f9fa;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .3);
   border-radius: 10px;
 }
 
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: #333;
   text-align: center;
 }
 
@@ -40,24 +40,25 @@
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: #333;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: #777;
   pointer-events: none;
   transition: .5s;
 }
 
-.user-box{
+.user-box {
   margin-bottom: 30px;
 }
 
@@ -65,7 +66,7 @@
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #F2F8FC;
+  color: #007bff;
   font-size: 12px;
 }
 
@@ -76,8 +77,12 @@
   margin-bottom: 5px;
 }
 
+.user-box input:focus {
+  box-shadow: none;
+}
+
 .custom-icon-button mat-icon {
-  color: rgba(255, 255, 255, 0.753);
+  color: #777;
 }
 
 .custom-icon-button {
@@ -88,8 +93,4 @@
 .pass {
   display: flex;
   align-items: center;
-}
-
-.input-container {
-  flex: 1;
 }
