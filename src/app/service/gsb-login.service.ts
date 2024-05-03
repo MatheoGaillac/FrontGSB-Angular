@@ -30,7 +30,7 @@ export class GsbLoginService {
           this.isLogin = true;
           this.saveLoginState();
           this._responses.next(this.dataStore.login);
-          this.router.navigate(['/frais/liste']);
+          this.router.navigate(['/home']);
         },
         (error) => {
           if (error.status === 401) {
