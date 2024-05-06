@@ -108,7 +108,7 @@ export class InviterService {
 
     this.http
       .post<Inviter>(
-        `http://wsgsb.mgail.etu.lmdsio.com/api/praticien/updateInvitation/`,
+        `http://wsgsb.mgail.etu.lmdsio.com/api/praticien/updateInvitation`,
         requestObject,
         { headers: headers }
       )
