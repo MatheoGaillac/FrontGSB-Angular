@@ -23,6 +23,9 @@
           <li class="nav-item" *ngIf="isLoggedIn() && isAdmin()">
             <a class="nav-link" routerLink="/invitation/ajouter" (click)="closeDropdown()">Ajouter Invitations</a>
           </li>
+          <li class="nav-item" *ngIf="isLoggedIn()">
+            <a class="nav-link" routerLink="/praticiens/listeCriteres" (click)="closeDropdown()">Spécialités</a>
+          </li>
           <li class="nav-item" *ngIf="isLoggedIn()" (click)="logout()">
             <a class="nav-link" routerLink="/logout" (click)="closeDropdown()">Se déconnecter</a>
           </li>

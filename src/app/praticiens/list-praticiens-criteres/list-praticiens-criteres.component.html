@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Choisir vos critères</h2>
+  <div class="form-group">
+    <label for="specialites">Spécialités</label>
+    <select class="form-control" id="specialites" [formControl]="id_specialite" required>
+      <option value="" disabled selected>Sélectionner une spécialiés</option>
+      <option *ngFor="let specialites of getListeSpecialites() | async" [value]="specialites.id_specialite">
+        {{ specialites.id_specialite }} {{ specialites.lib_specialite }}
+      </option>
+    </select>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="villes">Villes</label>
+    <select class="form-control" id="villes" [formControl]="code_postal" required>
+      <option value="" disabled selected>Sélectionner une ville</option>
+      <option *ngFor="let ville of getListeVilles() | async" [value]="ville.cp_praticien">
+        {{ ville.cp_praticien }} {{ ville.ville_praticien }}
+      </option>
+    </select>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="afficherPraticiens()">Afficher Praticiens</button>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Ville</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let praticien of praticiens">
+      <td>{{ praticien.nom_praticien }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

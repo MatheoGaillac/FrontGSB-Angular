@@ -39,6 +39,22 @@ export class PraticienService {
       );
   }
 
+  listePraticiensCriteres(code_postal: number, id_specialite: number) {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + this.gsb_api.recupererBearer(),
+    });
+
+    return this.http
+      .get<Praticien[]>('http://wsgsb.mgail.etu.lmdsio.com/api/praticien/getPraticienCriteres/' + code_postal + "/" + id_specialite, { headers: headers })
+      .subscribe(
+        (data) => {
+          this.listPraticien = data;
+          this._reponses.next(this.listPraticien);
+        },
+        (error) => console.log('Erreur appel API', error)
+      );
+  }
+
 
   getUnPraticien(id_praticien: number) {
     const headers = new HttpHeaders({

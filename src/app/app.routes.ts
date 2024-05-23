@@ -9,12 +9,16 @@ import {AfficheFraisComponent} from "./frais/affiche-frais/affiche-frais.compone
 import { AffichePraticienComponent } from './praticiens/affiche-praticien/affiche-praticien.component';
 import { ModifierInvitationComponent } from './invitation/modifier-invitation/modifier-invitation.component';
 import { AjouterInvitationComponent } from './invitation/ajouter-invitation/ajouter-invitation.component';
+import {
+  ListPraticiensCriteresComponent
+} from "./praticiens/list-praticiens-criteres/list-praticiens-criteres.component";
 
 export const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LoginComponent},
   {path: 'frais/liste', component: ListeFraisComponent, canActivate: [authentificationGuard()]},
   {path: 'frais/liste/:id_frais', component: AfficheFraisComponent, canActivate: [authentificationGuard()]},
+  {path: 'praticiens/listeCriteres', component: ListPraticiensCriteresComponent, canActivate: [authentificationGuard()]},
   {path: 'praticiens/liste', component: ListPraticiensComponent, canActivate: [authentificationGuard(), adminGuard()]},
   {path: 'praticiens/liste/:id_praticien', component: AffichePraticienComponent, canActivate: [authentificationGuard(), adminGuard()]},
   {path: 'praticiens/modifier/:id_praticien/:id_activite_compl', component: ModifierInvitationComponent, canActivate: [authentificationGuard(), adminGuard()]},
